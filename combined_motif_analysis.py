@@ -12,7 +12,7 @@ import pandas as pd
 import os
 from pymemesuite.common import MotifFile
 from pymemesuite.common import Sequence
-from pymemesuite.common import FIMO
+from pymemesuite.fimo import FIMO
 
 ##################
 # GET PROTEINS
@@ -36,7 +36,7 @@ for name, uid in proteins.items():
     sequences[name] = str(record.seq)
 
 #define motifs
-motifs = ["GLALSDLIQKYFF", "LSDLIQ", "LSSLIQ"]
+motifs = ["GLALSDLIQKYFF", "LSDLIQ", "LSSLIQ", "GTVLSDIIQKYFF", "LSDIIQ", "FKVGHGLAC", "VNILAKI"]
 
 ###################
 # BLAST
@@ -48,7 +48,7 @@ SeqIO.write(
 )
 
 muscle_records = [
-    SeqRecord(Seq(sequences["ABLIM"]), id = "ABLIM1"),
+    SeqRecord(Seq(sequences["ABLIM1"]), id = "ABLIM1"),
     SeqRecord(Seq(sequences["MYBPC"]), id = "MYBPC"),
     SeqRecord(Seq(sequences["MYL2"]), id = "MYL2")
 ]
@@ -71,7 +71,7 @@ os.system("makeblastdb -in muscle_proteins.fasta -dbtype prot -out muscle_db")
 
 os.system("blastp -query Nav1.5.fasta -db muscle_db -out nav_vs_muscle.tsv -outfmt '6 qseqid sseqid pident length qstart qend sstart send evalue bitscore")
 
-blast_df = pd.read.csv(
+blast_df = pd.read_csv(
     "nav_vs_muscle.tsv",
     sep = "\t",
     names = [
@@ -150,21 +150,14 @@ for _, row in blast_df.iterrows():
             "Alignment_Score": round(alignment.score, 1)
         })
 
-msa_df = pd.Dataframe(msa_rows)
+msa_df = pd.DataFrame(msa_rows)
 msa_df.to_csv("msa_results.tsv", sep="\t", index=False)
 
 ########################
 #CREATING MEME INPUT
 ######################
-with open("MEME_proteins_input.fasta", "w") as output:
-    for record in SeqIO.parse("muscle_proteins.fasta", "fasta"):
-        record.description = ""
-        record.id = record.id.replace("old", "new")
-        SeqIO.write(record, output, "fasta")
 
-import shutil
-shutil.copy("muscle_proteins.fasta", "muscle_seq.fna")
-
+# file 1
 def write_motif_file(motif, out_file):
     alphabet = "ACDEFGHIKLMNPQRSTVWY"
 
@@ -175,7 +168,7 @@ def write_motif_file(motif, out_file):
             f.write(f"MOTIF {residue} motif_{i+1}\n")
             f.write(f"letter-probability matrix: alength = {len(alphabet)} w = {len(residue)} nsites = 1\n")
 
-            for i in residue:
+            for i in residue: # strict matrix
                 row = []
                 for aa in alphabet:
                     if i == aa:
@@ -184,12 +177,83 @@ def write_motif_file(motif, out_file):
                         row.append("0.000")
                 f.write("  " + "  ".join(row) + "\n")
 
-#test
-write_motif_file(motifs, "motifs_input.meme")
+write_motif_file(motifs, "motifs_strict_input.meme")
+
+# file 2
+def make_filtered_dict(in_file):
+
+    with open(in_file, 'r') as f:
+        df = pd.read_csv(f, sep='\t')
+        motifs=set(df['Motif'].tolist()) # only want unique motifs 
+        aligned_motifs = df['Aligned_Motif'].tolist()
+        aligned_hits = df['Aligned_Hit'].tolist()
+
+        motif_hit_dict={}
+        for i in range(len(aligned_motifs)):
+            motif_hit_dict[aligned_motifs[i]]=aligned_hits[i]
+
+        # filtering by length
+        filtered_dict={}
+        for key, value in motif_hit_dict.items():
+            if len(key)>=4:
+                filtered_dict[key]=value
+
+    return motifs, filtered_dict
+
+def make_prob_matrix(motif, filtered_dict):
+    alphabet = "ACDEFGHIKLMNPQRSTVWY" 
+    
+    # initialize count matrix to zeros for specific motif length
+    count_matrix = pd.DataFrame(0, index=range(len(motif)), columns=list(alphabet))
+
+    # initialize with the motif itself
+    for i, aa in enumerate(motif):
+        if aa in count_matrix.columns: 
+            count_matrix.loc[i, aa] += 1
+
+    # update matrix based on substitutions in aligned hits
+    for fragment, hit in filtered_dict.items():
+        start = motif.find(fragment) 
+        if start != -1: # check to make sure there's a match 
+            for i, char in enumerate(hit):
+                position = start + i 
+                if position < len(motif) and char in alphabet:
+                    count_matrix.loc[position, char] += 1 # update positions with an aligned hit
+
+    row_sums = count_matrix.sum(axis=1)
+    prob_matrix = count_matrix.divide(row_sums, axis=0).round(3) # normalize
+        
+    return prob_matrix
+
+def write_flexible_motif_file(motifs, filtered_dict, out_file):
+    alphabet = "ACDEFGHIKLMNPQRSTVWY" # amino acids
+
+    with open(out_file, "w") as f:
+        f.write("MEME version 5\n")
+        f.write(f"ALPHABET= {alphabet}\n\n")
+
+        for i, motif in enumerate(motifs):
+            f.write(f"MOTIF {motif} motif_{i+8}\n")
+            
+            # call probability matrix function for each motif
+            probs = make_prob_matrix(motif, filtered_dict)
+            
+            f.write(f"letter-probability matrix: alength= {len(alphabet)} w= {len(motif)} nsites= 1\n")
+            f.write(f"{probs.to_string(header=False, index=False)}\n\n")
+
+    return f
+
+motifs_set, filtered_data = make_filtered_dict("msa_results.tsv")
+write_flexible_motif_file(motifs_set, filtered_data, "motifs_flexible_input.meme")
+
 
 ###############
 #FIMO
 ###############
+
+import shutil
+shutil.copy("muscle_proteins.fasta", "muscle_seq.fna")
+
 sequences_meme = [
     Sequence(str(record.seq), name=record.id.encode())
     for record in SeqIO.parse("muscle_seq.fna", "fasta")
@@ -205,7 +269,7 @@ fimo = FIMO(both_strands=False)
 
 meme_results = []
 with open("meme_suite_output.txt", "w") as out:
-    with MotifFile("motifs_input.meme") as motif_file:
+    with MotifFile("motifs_strict_input.meme") as motif_file:
         for motif in motif_file:
             out.write(f"{motif.name.decode()} {motif.consensus} \n")
             header = "Accession\tstart\tstop\tstrand\tscore\tpvalue\tmatch_seq\n"
@@ -231,10 +295,37 @@ with open("meme_suite_output.txt", "w") as out:
             
             out.write("\n")
 
+    with MotifFile("motifs_flexible_input.meme") as motif_file2:
+        for motif in motif_file2:
+            out.write(f"{motif.name.decode()} {motif.consensus} \n")
+            header = "Accession\tstart\tstop\tstrand\tscore\tpvalue\tmatch_seq\n"
+            out.write(header)
+            pattern = fimo.score_motif(motif, sequences_meme, motif_file2.background)
+            for m in pattern.matched_elements:
+                match_name = m.source.accession.decode()
+                full_match_seq = seq_id_dict[match_name]
+                sub_seq = full_match_seq[m.start-1 : m.stop]
+                line = f"{match_name}\t{m.start}\t{m.stop}\t{m.strand}\t{m.score}\t{m.pvalue}\t{sub_seq}\n"
+                out.write(line)
+
+                meme_results.append({
+                    "Method": "MEME",
+                    "Protein": match_name,
+                    "Motif": motif.name.decode(),
+                    "Start": m.start,
+                    "End": m.stop,
+                    "Score": m.score,
+                    "P_value": m.pvalue,
+                    "Match_Sequence": sub_seq
+                })
+            
+            out.write("\n")
+
 print(f"Found {len(meme_results)} MEME matches")
 
 #############
 # COMBINED RESULTS ANALYSIS
+#############
 
 # Convert BLAST+MSA results to comparable format
 blast_msa_results = []
