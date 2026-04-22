@@ -35,5 +35,15 @@ Once your virtual environment is set up, packages are installed, and you are in 
 ```
 .venv/bin/python combined_motif_analysis.py
 ```
+Note: for windows users, the commands to activate and run the code will look slightly different because there is no bin folder in the virual environment.
+```
+source .venv\Scripts\activate
+.venv\Scripts\python combined_motif_analysis.py
+```
+To deactivate the virtual environment, simply run:
+```
+deactivate
+```
 
 ## Inputs and Expected Outputs
+The combined_motif_analysis.py reads in a data file called sample_data.txt. This file contains the proteins, Uniprot IDs, and the motifs of interest for this project. 
