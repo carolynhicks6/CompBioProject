@@ -1,0 +1,52 @@
+motif_1 GLALSDLIQKYFF strict
+Accession	start	stop	strand	score	pvalue	match_seq
+ABLIM1	126	138	+	-6.725663716814161	7.855639493592424e-05	KVCGCDLAQGGFF
+
+motif_2 LSDLIQ strict
+Accession	start	stop	strand	score	pvalue	match_seq
+MYBPC	822	827	+	9.059829059829063	3.23151504124183e-05	NFDLIQ
+
+motif_3 LSSLIQ strict
+Accession	start	stop	strand	score	pvalue	match_seq
+
+motif_4 GTVLSDIIQKYFF strict
+Accession	start	stop	strand	score	pvalue	match_seq
+
+motif_5 LSDIIQ strict
+Accession	start	stop	strand	score	pvalue	match_seq
+
+motif_6 FKVGHGLAC strict
+Accession	start	stop	strand	score	pvalue	match_seq
+
+motif_7 VNILAKI strict
+Accession	start	stop	strand	score	pvalue	match_seq
+
+motif_8 FKVGHGLAC flexible
+Accession	start	stop	strand	score	pvalue	match_seq
+MYBPC	615	623	+	13.417475728155338	1.1594983979079461e-06	SFVPEGFAC
+
+motif_9 GTVLSDIIQKYFF flexible
+Accession	start	stop	strand	score	pvalue	match_seq
+MYBPC	532	544	+	0.929203539823007	3.124602510383145e-05	GQALAELIVQEKK
+
+motif_10 LSDIIQ flexible
+Accession	start	stop	strand	score	pvalue	match_seq
+MYL2	66	71	+	13.900826446280995	5.929809110194758e-06	IDEMIK
+
+motif_11 VNILAKI flexible
+Accession	start	stop	strand	score	pvalue	match_seq
+
+motif_12 LSDLIQ flexible
+Accession	start	stop	strand	score	pvalue	match_seq
+MYBPC	535	540	+	8.786324786324784	6.0095579832316275e-05	LAELIV
+MYBPC	822	827	+	8.615384615384613	8.234370257064242e-05	NFDLIQ
+
+motif_13 LSSLIQ flexible
+Accession	start	stop	strand	score	pvalue	match_seq
+MYL2	66	71	+	12.710743801652896	1.4480263063217745e-05	IDEMIK
+MYBPC	535	540	+	9.752066115702476	7.101826454547829e-05	LAELIV
+
+motif_14 GLALSDLIQKYFF flexible
+Accession	start	stop	strand	score	pvalue	match_seq
+MYBPC	532	544	+	5.769911504424776	3.793477880100238e-06	GQALAELIVQEKK
+
