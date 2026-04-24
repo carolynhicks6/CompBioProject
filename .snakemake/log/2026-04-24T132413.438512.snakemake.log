@@ -1,0 +1,37 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job        count
+-------  -------
+all            1
+combine        1
+total          2
+
+Select jobs to execute...
+
+[Fri Apr 24 13:24:14 2026]
+rule combine:
+    input: results/blast/msa.tsv, results/meme/meme_clean.tsv
+    output: results/final/simple_unique_hits.tsv, results/final/ranked_results.tsv
+    jobid: 4
+    reason: Missing output files: results/final/simple_unique_hits.tsv, results/final/ranked_results.tsv
+    resources: tmpdir=/tmp
+
+[Fri Apr 24 13:24:14 2026]
+Finished job 4.
+1 of 2 steps (50%) done
+Select jobs to execute...
+
+[Fri Apr 24 13:24:14 2026]
+localrule all:
+    input: results/blast/msa.tsv, results/meme/meme_clean.tsv, results/final/simple_unique_hits.tsv, results/final/ranked_results.tsv
+    jobid: 0
+    reason: Input files updated by another job: results/final/simple_unique_hits.tsv, results/final/ranked_results.tsv
+    resources: tmpdir=/tmp
+
+[Fri Apr 24 13:24:14 2026]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2026-04-24T132413.438512.snakemake.log

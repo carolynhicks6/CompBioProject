@@ -61,6 +61,8 @@ def get_seq(row):
     seq = sequences[row["Subject"]]
     return seq[row["Subject Start"]-1:row["Subject End"]]
 
+blast_df = blast_df[blast_df["Subject"] != "Nav1.5"]
+
 blast_df["Match"] = blast_df.apply(get_seq, axis=1)
 blast_df.to_csv(f"{outdir}/blast_results.tsv", sep="\t", index=False)
 
@@ -105,4 +107,7 @@ for _, row in blast_df.iterrows():
         })
 
 msa_df = pd.DataFrame(rows)
+
+msa_df = msa_df[msa_df["Protein"] != "Nav1.5"]
+
 msa_df.to_csv(f"{outdir}/msa.tsv", sep="\t", index=False)

@@ -144,6 +144,12 @@ df["Method"] = "MEME"
 
 df = df[df["P_value"] < 1e-4]
 
+df = df[df["Protein"] != "Nav1.5"]
+
+df = df.rename(columns={"Match_Sequence": "Match"})
+df = df[["Protein", "Motif", "Match", "P_value"]]   # keep P_value
+df.to_csv(output_file, sep="\t", index=False)
+
 df.to_csv(output_file, sep="\t", index=False)
 
 print(f"MEME hits: {len(df)}")

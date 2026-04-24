@@ -13,6 +13,9 @@ os.makedirs(outdir, exist_ok=True)
 blast = pd.read_csv(blast_file, sep="\t")
 meme = pd.read_csv(meme_file, sep="\t")
 
+blast = blast[blast["Protein"] != "Nav1.5"]
+meme = meme[meme["Protein"] != "Nav1.5"]
+
 #build blast + MSA rows
 blast_rows = []
 for _, row in blast.iterrows():
@@ -38,13 +41,16 @@ for _, row in meme.iterrows():
         "MSA_Identity": None,
         "MSA_Similarity": None,
         "MEME_Pvalue": row.get("P_value", None),
-        "Match": row.get("Match", "")
+        "Match": str(row["Match"])
     })
 
 combined = pd.DataFrame(blast_rows + meme_rows)
 
 #remove sequences shorter than 4 AAS
 combined = combined[combined["Match"].str.len() >= 4]
+
+print("Total rows:", len(combined))
+print(combined["Method"].value_counts())
 
 #unique output
 simple = (
