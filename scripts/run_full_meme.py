@@ -62,10 +62,10 @@ def make_prob_matrix(motif, filtered_dict):
     alphabet = "ACDEFGHIKLMNPQRSTVWY"
     count_matrix = pd.DataFrame(0, index=range(len(motif)), columns=list(alphabet))
 
-    # seed with the motif itself
+    # seed with the motif itself 5x more than substitutions
     for i, aa in enumerate(motif):
         if aa in count_matrix.columns:
-            count_matrix.loc[i, aa] += 1
+            count_matrix.loc[i, aa] += 5
 
     # update positions based on aligned fragments
     for fragment, hit in filtered_dict.items():

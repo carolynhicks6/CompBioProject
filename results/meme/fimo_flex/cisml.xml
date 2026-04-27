@@ -86,9 +86,9 @@ clusterid CDATA #IMPLIED
 <scanned-sequence accession="ABLIM1" name="ABLIM1">
 </scanned-sequence>
 <scanned-sequence accession="MYBPC" name="MYBPC">
-<matched-element start="615" stop="623" score="15.9806" pvalue="5.24e-07">
+<matched-element start="615" stop="623" score="13.4175" pvalue="1.16e-06">
 <sequence>SFVPEGFAC</sequence>
-<mem:qvalue>0.00218</mem:qvalue>
+<mem:qvalue>0.00487</mem:qvalue>
 </matched-element>
 </scanned-sequence>
 <scanned-sequence accession="MYL2" name="MYL2">
@@ -97,48 +97,40 @@ clusterid CDATA #IMPLIED
 </pattern>
 <pattern accession="GLALSDLIQKYFF" name="motif_101">
 <scanned-sequence accession="Nav1.5" name="Nav1.5">
-<matched-element start="1607" stop="1619" score="25.0265" pvalue="5.05e-10">
+<matched-element start="1607" stop="1619" score="29.0265" pvalue="5.3e-11">
 <sequence>GTVLSDIIQKYFF</sequence>
-<mem:qvalue>2.1e-06</mem:qvalue>
+<mem:qvalue>2.2e-07</mem:qvalue>
 </matched-element>
 </scanned-sequence>
 <scanned-sequence accession="ABLIM1" name="ABLIM1">
 </scanned-sequence>
 <scanned-sequence accession="MYBPC" name="MYBPC">
-<matched-element start="532" stop="544" score="8.43363" pvalue="1.97e-06">
+<matched-element start="532" stop="544" score="5.22124" pvalue="4.24e-06">
 <sequence>GQALAELIVQEKK</sequence>
-<mem:qvalue>0.0041</mem:qvalue>
-</matched-element>
-<matched-element start="400" stop="412" score="-2.27434" pvalue="6.78e-05">
-<sequence>GQEIQMSGSKYIF</sequence>
-<mem:qvalue>0.0706</mem:qvalue>
+<mem:qvalue>0.00881</mem:qvalue>
 </matched-element>
 </scanned-sequence>
 <scanned-sequence accession="MYL2" name="MYL2">
-<matched-element start="63" stop="75" score="1.15929" pvalue="3.38e-05">
-<sequence>NEEIDEMIKEAPG</sequence>
-<mem:qvalue>0.047</mem:qvalue>
-</matched-element>
 </scanned-sequence>
 <mem:has-qvalues>yes</mem:has-qvalues>
 </pattern>
 <pattern accession="LSDLIQ" name="motif_102">
 <scanned-sequence accession="Nav1.5" name="Nav1.5">
-<matched-element start="1610" stop="1615" score="13.4274" pvalue="7.35e-06">
+<matched-element start="1610" stop="1615" score="15.2308" pvalue="2.3e-06">
 <sequence>LSDIIQ</sequence>
-<mem:qvalue>0.031</mem:qvalue>
+<mem:qvalue>0.0097</mem:qvalue>
 </matched-element>
 </scanned-sequence>
 <scanned-sequence accession="ABLIM1" name="ABLIM1">
 </scanned-sequence>
 <scanned-sequence accession="MYBPC" name="MYBPC">
-<matched-element start="535" stop="540" score="10.4444" pvalue="6.38e-05">
+<matched-element start="535" stop="540" score="8.78632" pvalue="6.01e-05">
 <sequence>LAELIV</sequence>
-<mem:qvalue>0.129</mem:qvalue>
+<mem:qvalue>0.116</mem:qvalue>
 </matched-element>
-<matched-element start="822" stop="827" score="7.89744" pvalue="9.2e-05">
+<matched-element start="822" stop="827" score="8.61538" pvalue="8.23e-05">
 <sequence>NFDLIQ</sequence>
-<mem:qvalue>0.129</mem:qvalue>
+<mem:qvalue>0.116</mem:qvalue>
 </matched-element>
 </scanned-sequence>
 <scanned-sequence accession="MYL2" name="MYL2">
@@ -151,36 +143,32 @@ clusterid CDATA #IMPLIED
 <scanned-sequence accession="ABLIM1" name="ABLIM1">
 </scanned-sequence>
 <scanned-sequence accession="MYBPC" name="MYBPC">
-<matched-element start="535" stop="540" score="11.4274" pvalue="4.35e-05">
+<matched-element start="535" stop="540" score="9.75207" pvalue="7.07e-05">
 <sequence>LAELIV</sequence>
-<mem:qvalue>0.0917</mem:qvalue>
+<mem:qvalue>0.149</mem:qvalue>
 </matched-element>
 </scanned-sequence>
 <scanned-sequence accession="MYL2" name="MYL2">
-<matched-element start="66" stop="71" score="19.0484" pvalue="1.33e-07">
+<matched-element start="66" stop="71" score="12.6942" pvalue="1.45e-05">
 <sequence>IDEMIK</sequence>
-<mem:qvalue>0.000562</mem:qvalue>
+<mem:qvalue>0.0611</mem:qvalue>
 </matched-element>
 </scanned-sequence>
 <mem:has-qvalues>yes</mem:has-qvalues>
 </pattern>
 <pattern accession="GTVLSDIIQKYFF" name="motif_104">
 <scanned-sequence accession="Nav1.5" name="Nav1.5">
-<matched-element start="1607" stop="1619" score="46.2212" pvalue="7.35e-16">
+<matched-element start="1607" stop="1619" score="50.6372" pvalue="3.72e-17">
 <sequence>GTVLSDIIQKYFF</sequence>
-<mem:qvalue>3.08e-12</mem:qvalue>
+<mem:qvalue>1.56e-13</mem:qvalue>
 </matched-element>
 </scanned-sequence>
 <scanned-sequence accession="ABLIM1" name="ABLIM1">
 </scanned-sequence>
 <scanned-sequence accession="MYBPC" name="MYBPC">
-<matched-element start="532" stop="544" score="4.0885" pvalue="7e-06">
+<matched-element start="532" stop="544" score="-1.37168" pvalue="5.08e-05">
 <sequence>GQALAELIVQEKK</sequence>
-<mem:qvalue>0.0147</mem:qvalue>
-</matched-element>
-<matched-element start="400" stop="412" score="-2.26549" pvalue="7.84e-05">
-<sequence>GQEIQMSGSKYIF</sequence>
-<mem:qvalue>0.109</mem:qvalue>
+<mem:qvalue>0.106</mem:qvalue>
 </matched-element>
 </scanned-sequence>
 <scanned-sequence accession="MYL2" name="MYL2">
@@ -189,9 +177,9 @@ clusterid CDATA #IMPLIED
 </pattern>
 <pattern accession="LSDIIQ" name="motif_105">
 <scanned-sequence accession="Nav1.5" name="Nav1.5">
-<matched-element start="1610" stop="1615" score="16.7177" pvalue="2.03e-06">
+<matched-element start="1610" stop="1615" score="21.1901" pvalue="4.52e-08">
 <sequence>LSDIIQ</sequence>
-<mem:qvalue>0.00429</mem:qvalue>
+<mem:qvalue>0.000191</mem:qvalue>
 </matched-element>
 </scanned-sequence>
 <scanned-sequence accession="ABLIM1" name="ABLIM1">
@@ -199,16 +187,16 @@ clusterid CDATA #IMPLIED
 <scanned-sequence accession="MYBPC" name="MYBPC">
 </scanned-sequence>
 <scanned-sequence accession="MYL2" name="MYL2">
-<matched-element start="66" stop="71" score="19.3871" pvalue="5.58e-08">
+<matched-element start="66" stop="71" score="13.8926" pvalue="5.93e-06">
 <sequence>IDEMIK</sequence>
-<mem:qvalue>0.000235</mem:qvalue>
+<mem:qvalue>0.0125</mem:qvalue>
 </matched-element>
 </scanned-sequence>
 <mem:has-qvalues>yes</mem:has-qvalues>
 </pattern>
 <pattern accession="VNILAKI" name="motif_106">
 <scanned-sequence accession="Nav1.5" name="Nav1.5">
-<matched-element start="1559" stop="1565" score="25.1417" pvalue="3.69e-09">
+<matched-element start="1559" stop="1565" score="26.6" pvalue="3.69e-09">
 <sequence>VNILAKI</sequence>
 <mem:qvalue>1.55e-05</mem:qvalue>
 </matched-element>
