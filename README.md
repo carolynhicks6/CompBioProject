@@ -65,7 +65,8 @@ ABLIM1 motif: CKGEVLRVQTKHFHIKCFTCKVCGCDLAQGGFFIKNGEYLCTLDYQRMYGTRC
 The motif can be substituted for other proteins and other motifs. Each line in the file results/structure/Chai_Lab_Inputs.txt represents a unique muscle protein motif that can be plugged into the "peptide" section.
 
 Example shown below: 
-<img width="1178" height="492" alt="ToxinProteinExample" src="https://github.com/user-attachments/assets/6ce505ab-0d93-43bd-9a42-174be7f844d4" />
+<img width="1212" height="484" alt="ExampleFastaRevised" src="https://github.com/user-attachments/assets/16e82e9f-ad4c-41d8-8842-6a94477e9b65" />
+
 
 Then, run each cell by clicking the play buttons in each cell. If you encounter errors, restart the session, reconnect to the runtime, and run the cells again. 
 
