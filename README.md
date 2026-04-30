@@ -23,6 +23,10 @@ Once the conda environment has been established in your project directory, activ
 ```
 conda activate motif_pipeline
 ```
+If you want to deactivat the conda environment, simply use the command:
+```
+conda deactivate
+```
 When the virtual environment is active, the terminal prompt should show: 
 ```
 (.motif_pipeline) user/path_to_project_directory
@@ -44,11 +48,13 @@ The Snakefile provided will output two final motif charts in the results folder 
 
 ## Structural Prediction and Alignment 
 ### Chai-1
-The PKH lab provided a Google Colab script to run Chai-1, a protein prediction and modeling software. The Chai script can be easily modified for other toxins and motifs. [Chai-1 Google Colab Script](https://colab.research.google.com/drive/1aFoc2KdYG9In8NDpSrkjNgxc08ujqWI1?usp=sharing) Our previously described pipeline outputs Chai-1 input sequences (results/structure/Chai_Lab_Inputs.txt) for visualization.
+The PKH lab provided a Google Colab script to run Chai-1, a protein prediction and modeling software. The Chai script can be easily modified for other toxins and motifs. 
+[Chai-1 Google Colab Script](https://colab.research.google.com/drive/1aFoc2KdYG9In8NDpSrkjNgxc08ujqWI1?usp=sharing) 
+Our previously described pipeline outputs Chai-1 input sequences (results/structure/Chai_Lab_Inputs.txt) for visualization.
 
 Protein modeling was done to compare structural similarity between the identified muscle protein motif and the input NAV1.5, as well as to determine binding potential between the identified motifs and LqhIII toxin. 20 amino acids upstream and downstream of the motif in the respective protein were used for visualization purposes. Aggregate confidence scores in Chai-1 were not significantly changed by increasing or decreasing sequence length.
 
-After opening the google colab script, the first step is to connect to the specified run-time. In the upper right corner, click on the icon displaying "RAM Disk" and select "Connect to a hosted runtime: T4". Example shown below:
+After opening the link to the Google Colab script, the first step is to connect to the specified run-time. In the upper right corner, click on the icon displaying "RAM Disk" and select "Connect to a hosted runtime: T4". Example shown below:
 <img width="2868" height="1094" alt="ChaiConnectRuntime" src="https://github.com/user-attachments/assets/8420ecb2-819e-4d6f-aeae-a92ea6789ffa" />
 
 In the Chai script, there is a fasta-format section where the sequences for the LqhIII toxin and the candidate protein motifs can be inserted. To run the script, use the following input data: 
@@ -67,4 +73,11 @@ After running code, the resulting structural prediction files (.cif format) can 
 <img width="2866" height="1346" alt="ChaiCIF" src="https://github.com/user-attachments/assets/ad3189b6-ea9c-4e66-8380-ab247eea077d" />
 
 ### PyMOL
-Additionally, our pipeline creates PyMOL scripts (results/structure/).
+As an additional tool for structural visualization, the script pymol_file_generator.py is present in scripts/. If you wish to use this additional functionality for visualization, the first step is to install PyMOL locally on your device. Please refer to the PyMOL documentation for installation: https://github.com/schrodinger/pymol-open-source
+
+After successfully installing PyMOL, navigate to the original project directory and activate the Conda environment.
+```
+cd CompBioProject/
+conda activate motif_pipeline
+```
+Then, download the .pdb files from data/pdb/ to your local machine. Navigate into the file pymol_file_generator.py and change the file paths to the paths to the newly downloaded .pdb files on your local machine. PyMOL requires local file paths. 
