@@ -42,7 +42,7 @@ The initial input file to run the Snakefile is shown in config/input.txt, and it
 ## Expected Outputs
 The Snakefile provided will output two final motif charts in the results folder under final. The first ranked_results.tsv is a table ranking our identified motifs based off P-values and motif sequence length. The second chart, simple_unique_hits.tsv provides a simplified format of the motifs for future analysis. 
 
-## Structural Prediction and Alignmnet 
+## Structural Prediction and Alignment 
 To determine how well the identified motifs interact with the LqhIII toxin, we used protein modeling and predicting software. Our pipeline creates PyMOL scripts (results/structure/) as well as Chai-1 input sequences (results/structure/Chai_Lab_Inputs.txt) for visualization. An example run of Chai-1 can be shown here:
 https://colab.research.google.com/drive/1aFoc2KdYG9In8NDpSrkjNgxc08ujqWI1?usp=sharing.
 
