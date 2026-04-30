@@ -48,13 +48,12 @@
 <letter id="Z" symbol="Z" equals="EQ" name="Glutamine or Glutamic acid"/>
 <letter id="J" symbol="J" equals="IL" name="Leucine or Isoleucine"/>
 </alphabet>
-<motif name="FKVGHGLAC" alt="motif_100" width="9" best-possible-match="FKVGHGLAC"/>
-<motif name="GLALSDLIQKYFF" alt="motif_101" width="13" best-possible-match="GLALSDLIQKYFF"/>
-<motif name="LSDLIQ" alt="motif_102" width="6" best-possible-match="LSDLIQ"/>
-<motif name="LSSLIQ" alt="motif_103" width="6" best-possible-match="LSSLIQ"/>
-<motif name="GTVLSDIIQKYFF" alt="motif_104" width="13" best-possible-match="GTVLSDIIQKYFF"/>
-<motif name="LSDIIQ" alt="motif_105" width="6" best-possible-match="LSDIIQ"/>
-<motif name="VNILAKI" alt="motif_106" width="7" best-possible-match="VNILAKI"/>
+<motif name="GLALSDLIQKYFF" alt="motif_100" width="13" best-possible-match="GLALSDLIQKYFF"/>
+<motif name="LSDLIQ" alt="motif_101" width="6" best-possible-match="LSDLIQ"/>
+<motif name="LSSLIQ" alt="motif_102" width="6" best-possible-match="LSSLIQ"/>
+<motif name="GTVLSDIIQKYFF" alt="motif_103" width="13" best-possible-match="GTVLSDIIQKYFF"/>
+<motif name="LSDIIQ" alt="motif_104" width="6" best-possible-match="LSDIIQ"/>
+<motif name="VNILAKI" alt="motif_105" width="7" best-possible-match="VNILAKI"/>
 <background source="--nrdb--">
 <value letter="A">0.073</value>
 <value letter="C">0.018</value>

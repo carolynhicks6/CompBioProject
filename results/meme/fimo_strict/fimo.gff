@@ -6,4 +6,4 @@ MYBPC	fimo	sequence_motif	822	827	44.9	+	.	Name=LSDLIQ_MYBPC+;Alias=motif_2;ID=L
 Nav1.5	fimo	sequence_motif	1610	1615	41.4	+	.	Name=LSSLIQ_Nav1.5+;Alias=motif_3;ID=LSSLIQ-motif_3-1-Nav1.5;pvalue=7.16e-05;qvalue=0.302;sequence=LSDIIQ;
 Nav1.5	fimo	sequence_motif	1607	1619	164	+	.	Name=GTVLSDIIQKYFF_Nav1.5+;Alias=motif_4;ID=GTVLSDIIQKYFF-motif_4-1-Nav1.5;pvalue=3.72e-17;qvalue=1.56e-13;sequence=GTVLSDIIQKYFF;
 Nav1.5	fimo	sequence_motif	1610	1615	73.4	+	.	Name=LSDIIQ_Nav1.5+;Alias=motif_5;ID=LSDIIQ-motif_5-1-Nav1.5;pvalue=4.52e-08;qvalue=0.000191;sequence=LSDIIQ;
-Nav1.5	fimo	sequence_motif	1559	1565	84.3	+	.	Name=VNILAKI_Nav1.5+;Alias=motif_7;ID=VNILAKI-motif_7-1-Nav1.5;pvalue=3.69e-09;qvalue=1.55e-05;sequence=VNILAKI;
+Nav1.5	fimo	sequence_motif	1559	1565	84.3	+	.	Name=VNILAKI_Nav1.5+;Alias=motif_6;ID=VNILAKI-motif_6-1-Nav1.5;pvalue=3.69e-09;qvalue=1.55e-05;sequence=VNILAKI;

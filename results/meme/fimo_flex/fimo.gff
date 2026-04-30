@@ -1,14 +1,13 @@
 ##gff-version 3
-MYBPC	fimo	sequence_motif	615	623	59.3	+	.	Name=FKVGHGLAC_MYBPC+;Alias=motif_100;ID=FKVGHGLAC-motif_100-1-MYBPC;pvalue=1.16e-06;qvalue=0.00487;sequence=SFVPEGFAC;
-Nav1.5	fimo	sequence_motif	1607	1619	103	+	.	Name=GLALSDLIQKYFF_Nav1.5+;Alias=motif_101;ID=GLALSDLIQKYFF-motif_101-1-Nav1.5;pvalue=5.3e-11;qvalue=2.2e-07;sequence=GTVLSDIIQKYFF;
-MYBPC	fimo	sequence_motif	532	544	53.7	+	.	Name=GLALSDLIQKYFF_MYBPC+;Alias=motif_101;ID=GLALSDLIQKYFF-motif_101-1-MYBPC;pvalue=4.24e-06;qvalue=0.00881;sequence=GQALAELIVQEKK;
-Nav1.5	fimo	sequence_motif	1610	1615	56.4	+	.	Name=LSDLIQ_Nav1.5+;Alias=motif_102;ID=LSDLIQ-motif_102-1-Nav1.5;pvalue=2.3e-06;qvalue=0.0097;sequence=LSDIIQ;
-MYBPC	fimo	sequence_motif	535	540	42.2	+	.	Name=LSDLIQ_MYBPC+;Alias=motif_102;ID=LSDLIQ-motif_102-1-MYBPC;pvalue=6.01e-05;qvalue=0.116;sequence=LAELIV;
-MYBPC	fimo	sequence_motif	822	827	40.8	+	.	Name=LSDLIQ_MYBPC+;Alias=motif_102;ID=LSDLIQ-motif_102-2-MYBPC;pvalue=8.23e-05;qvalue=0.116;sequence=NFDLIQ;
-MYBPC	fimo	sequence_motif	535	540	41.5	+	.	Name=LSSLIQ_MYBPC+;Alias=motif_103;ID=LSSLIQ-motif_103-1-MYBPC;pvalue=7.07e-05;qvalue=0.149;sequence=LAELIV;
-MYL2	fimo	sequence_motif	66	71	48.4	+	.	Name=LSSLIQ_MYL2+;Alias=motif_103;ID=LSSLIQ-motif_103-1-MYL2;pvalue=1.45e-05;qvalue=0.0611;sequence=IDEMIK;
-Nav1.5	fimo	sequence_motif	1607	1619	164	+	.	Name=GTVLSDIIQKYFF_Nav1.5+;Alias=motif_104;ID=GTVLSDIIQKYFF-motif_104-1-Nav1.5;pvalue=3.72e-17;qvalue=1.56e-13;sequence=GTVLSDIIQKYFF;
-MYBPC	fimo	sequence_motif	532	544	42.9	+	.	Name=GTVLSDIIQKYFF_MYBPC+;Alias=motif_104;ID=GTVLSDIIQKYFF-motif_104-1-MYBPC;pvalue=5.08e-05;qvalue=0.106;sequence=GQALAELIVQEKK;
-Nav1.5	fimo	sequence_motif	1610	1615	73.4	+	.	Name=LSDIIQ_Nav1.5+;Alias=motif_105;ID=LSDIIQ-motif_105-1-Nav1.5;pvalue=4.52e-08;qvalue=0.000191;sequence=LSDIIQ;
-MYL2	fimo	sequence_motif	66	71	52.3	+	.	Name=LSDIIQ_MYL2+;Alias=motif_105;ID=LSDIIQ-motif_105-1-MYL2;pvalue=5.93e-06;qvalue=0.0125;sequence=IDEMIK;
-Nav1.5	fimo	sequence_motif	1559	1565	84.3	+	.	Name=VNILAKI_Nav1.5+;Alias=motif_106;ID=VNILAKI-motif_106-1-Nav1.5;pvalue=3.69e-09;qvalue=1.55e-05;sequence=VNILAKI;
+Nav1.5	fimo	sequence_motif	1607	1619	103	+	.	Name=GLALSDLIQKYFF_Nav1.5+;Alias=motif_100;ID=GLALSDLIQKYFF-motif_100-1-Nav1.5;pvalue=5.3e-11;qvalue=2.2e-07;sequence=GTVLSDIIQKYFF;
+MYBPC	fimo	sequence_motif	532	544	53.7	+	.	Name=GLALSDLIQKYFF_MYBPC+;Alias=motif_100;ID=GLALSDLIQKYFF-motif_100-1-MYBPC;pvalue=4.24e-06;qvalue=0.00881;sequence=GQALAELIVQEKK;
+Nav1.5	fimo	sequence_motif	1610	1615	56.4	+	.	Name=LSDLIQ_Nav1.5+;Alias=motif_101;ID=LSDLIQ-motif_101-1-Nav1.5;pvalue=2.3e-06;qvalue=0.0097;sequence=LSDIIQ;
+MYBPC	fimo	sequence_motif	535	540	42.2	+	.	Name=LSDLIQ_MYBPC+;Alias=motif_101;ID=LSDLIQ-motif_101-1-MYBPC;pvalue=6.01e-05;qvalue=0.116;sequence=LAELIV;
+MYBPC	fimo	sequence_motif	822	827	40.8	+	.	Name=LSDLIQ_MYBPC+;Alias=motif_101;ID=LSDLIQ-motif_101-2-MYBPC;pvalue=8.23e-05;qvalue=0.116;sequence=NFDLIQ;
+MYBPC	fimo	sequence_motif	535	540	41.5	+	.	Name=LSSLIQ_MYBPC+;Alias=motif_102;ID=LSSLIQ-motif_102-1-MYBPC;pvalue=7.07e-05;qvalue=0.149;sequence=LAELIV;
+MYL2	fimo	sequence_motif	66	71	48.4	+	.	Name=LSSLIQ_MYL2+;Alias=motif_102;ID=LSSLIQ-motif_102-1-MYL2;pvalue=1.45e-05;qvalue=0.0611;sequence=IDEMIK;
+Nav1.5	fimo	sequence_motif	1607	1619	164	+	.	Name=GTVLSDIIQKYFF_Nav1.5+;Alias=motif_103;ID=GTVLSDIIQKYFF-motif_103-1-Nav1.5;pvalue=3.72e-17;qvalue=1.56e-13;sequence=GTVLSDIIQKYFF;
+MYBPC	fimo	sequence_motif	532	544	42.9	+	.	Name=GTVLSDIIQKYFF_MYBPC+;Alias=motif_103;ID=GTVLSDIIQKYFF-motif_103-1-MYBPC;pvalue=5.08e-05;qvalue=0.106;sequence=GQALAELIVQEKK;
+Nav1.5	fimo	sequence_motif	1610	1615	73.4	+	.	Name=LSDIIQ_Nav1.5+;Alias=motif_104;ID=LSDIIQ-motif_104-1-Nav1.5;pvalue=4.52e-08;qvalue=0.000191;sequence=LSDIIQ;
+MYL2	fimo	sequence_motif	66	71	52.3	+	.	Name=LSDIIQ_MYL2+;Alias=motif_104;ID=LSDIIQ-motif_104-1-MYL2;pvalue=5.93e-06;qvalue=0.0125;sequence=IDEMIK;
+Nav1.5	fimo	sequence_motif	1559	1565	84.3	+	.	Name=VNILAKI_Nav1.5+;Alias=motif_105;ID=VNILAKI-motif_105-1-Nav1.5;pvalue=3.69e-09;qvalue=1.55e-05;sequence=VNILAKI;

@@ -80,22 +80,7 @@ clusterid CDATA #IMPLIED
 <site-pvalue-cutoff>0.0001</site-pvalue-cutoff>
 <sequence-filtering on-off="off"/>
 </parameters>
-<pattern accession="FKVGHGLAC" name="motif_100">
-<scanned-sequence accession="Nav1.5" name="Nav1.5">
-</scanned-sequence>
-<scanned-sequence accession="ABLIM1" name="ABLIM1">
-</scanned-sequence>
-<scanned-sequence accession="MYBPC" name="MYBPC">
-<matched-element start="615" stop="623" score="13.4175" pvalue="1.16e-06">
-<sequence>SFVPEGFAC</sequence>
-<mem:qvalue>0.00487</mem:qvalue>
-</matched-element>
-</scanned-sequence>
-<scanned-sequence accession="MYL2" name="MYL2">
-</scanned-sequence>
-<mem:has-qvalues>yes</mem:has-qvalues>
-</pattern>
-<pattern accession="GLALSDLIQKYFF" name="motif_101">
+<pattern accession="GLALSDLIQKYFF" name="motif_100">
 <scanned-sequence accession="Nav1.5" name="Nav1.5">
 <matched-element start="1607" stop="1619" score="29.0265" pvalue="5.3e-11">
 <sequence>GTVLSDIIQKYFF</sequence>
@@ -114,7 +99,7 @@ clusterid CDATA #IMPLIED
 </scanned-sequence>
 <mem:has-qvalues>yes</mem:has-qvalues>
 </pattern>
-<pattern accession="LSDLIQ" name="motif_102">
+<pattern accession="LSDLIQ" name="motif_101">
 <scanned-sequence accession="Nav1.5" name="Nav1.5">
 <matched-element start="1610" stop="1615" score="15.2308" pvalue="2.3e-06">
 <sequence>LSDIIQ</sequence>
@@ -137,7 +122,7 @@ clusterid CDATA #IMPLIED
 </scanned-sequence>
 <mem:has-qvalues>yes</mem:has-qvalues>
 </pattern>
-<pattern accession="LSSLIQ" name="motif_103">
+<pattern accession="LSSLIQ" name="motif_102">
 <scanned-sequence accession="Nav1.5" name="Nav1.5">
 </scanned-sequence>
 <scanned-sequence accession="ABLIM1" name="ABLIM1">
@@ -156,7 +141,7 @@ clusterid CDATA #IMPLIED
 </scanned-sequence>
 <mem:has-qvalues>yes</mem:has-qvalues>
 </pattern>
-<pattern accession="GTVLSDIIQKYFF" name="motif_104">
+<pattern accession="GTVLSDIIQKYFF" name="motif_103">
 <scanned-sequence accession="Nav1.5" name="Nav1.5">
 <matched-element start="1607" stop="1619" score="50.6372" pvalue="3.72e-17">
 <sequence>GTVLSDIIQKYFF</sequence>
@@ -175,7 +160,7 @@ clusterid CDATA #IMPLIED
 </scanned-sequence>
 <mem:has-qvalues>yes</mem:has-qvalues>
 </pattern>
-<pattern accession="LSDIIQ" name="motif_105">
+<pattern accession="LSDIIQ" name="motif_104">
 <scanned-sequence accession="Nav1.5" name="Nav1.5">
 <matched-element start="1610" stop="1615" score="21.1901" pvalue="4.52e-08">
 <sequence>LSDIIQ</sequence>
@@ -194,7 +179,7 @@ clusterid CDATA #IMPLIED
 </scanned-sequence>
 <mem:has-qvalues>yes</mem:has-qvalues>
 </pattern>
-<pattern accession="VNILAKI" name="motif_106">
+<pattern accession="VNILAKI" name="motif_105">
 <scanned-sequence accession="Nav1.5" name="Nav1.5">
 <matched-element start="1559" stop="1565" score="26.6" pvalue="3.69e-09">
 <sequence>VNILAKI</sequence>

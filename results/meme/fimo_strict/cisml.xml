@@ -163,18 +163,7 @@ clusterid CDATA #IMPLIED
 </scanned-sequence>
 <mem:has-qvalues>yes</mem:has-qvalues>
 </pattern>
-<pattern accession="FKVGHGLAC" name="motif_6">
-<scanned-sequence accession="Nav1.5" name="Nav1.5">
-</scanned-sequence>
-<scanned-sequence accession="ABLIM1" name="ABLIM1">
-</scanned-sequence>
-<scanned-sequence accession="MYBPC" name="MYBPC">
-</scanned-sequence>
-<scanned-sequence accession="MYL2" name="MYL2">
-</scanned-sequence>
-<mem:has-qvalues>yes</mem:has-qvalues>
-</pattern>
-<pattern accession="VNILAKI" name="motif_7">
+<pattern accession="VNILAKI" name="motif_6">
 <scanned-sequence accession="Nav1.5" name="Nav1.5">
 <matched-element start="1559" stop="1565" score="27.125" pvalue="3.69e-09">
 <sequence>VNILAKI</sequence>
