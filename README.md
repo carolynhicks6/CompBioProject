@@ -55,7 +55,7 @@ Our previously described pipeline outputs Chai-1 input sequences (results/struct
 Protein modeling was done to compare structural similarity between the identified muscle protein motif and the input NAV1.5, as well as to determine binding potential between the identified motifs and LqhIII toxin. 20 amino acids upstream and downstream of the motif in the respective protein were used for visualization purposes. Aggregate confidence scores in Chai-1 were not significantly changed by increasing or decreasing sequence length.
 
 After opening the link to the Google Colab script, the first step is to connect to the specified run-time. In the upper right corner, click on the icon displaying "RAM Disk" and select "Connect to a hosted runtime: T4". Example shown below:
-<img width="2868" height="1094" alt="ChaiConnectRuntime" src="https://github.com/user-attachments/assets/8420ecb2-819e-4d6f-aeae-a92ea6789ffa" />
+<img width="2872" height="1372" alt="ConnectToRunTime" src="https://github.com/user-attachments/assets/6d9d3549-8d4a-4a62-8f7c-133c889e6ca2" />
 
 In the Chai script, there is a fasta-format section where the sequences for the LqhIII toxin and the candidate protein motifs can be inserted. To run the script, use the following input data: 
 
@@ -71,7 +71,7 @@ Example shown below:
 Then, run each cell by clicking the play buttons in each cell. If you encounter errors, restart the session, reconnect to the runtime, and run the cells again. 
 
 After running code, the resulting structural prediction files (.cif format) can be downloaded from the "Files" tab, indicated by a folder icon on the left side of the google colab interface for the chai-1 script. Example shown below:
-<img width="2866" height="1346" alt="ChaiCIF" src="https://github.com/user-attachments/assets/ad3189b6-ea9c-4e66-8380-ab247eea077d" />
+<img width="2876" height="1378" alt="CIF_Files" src="https://github.com/user-attachments/assets/db5110fe-2bbf-4b74-a12d-f7ea0dc5af41" />
 
 ### PyMOL
 As an additional tool for structural visualization, the script pymol_file_generator.py is present in scripts/. If you wish to use this additional functionality for visualization, the first step is to install PyMOL locally on your device. Please refer to the PyMOL documentation for installation: https://github.com/schrodinger/pymol-open-source
