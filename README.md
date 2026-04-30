@@ -33,7 +33,7 @@ When the virtual environment is active, the terminal prompt should show:
 ```
 To run the snakemake file, run the command:
 ```
-snakemake Snakefile --cores 1
+snakemake --cores 1
 ```
 To run everything again, run the clean rule:
 ```
