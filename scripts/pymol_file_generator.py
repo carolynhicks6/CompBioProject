@@ -197,4 +197,4 @@ with open(f"Chai_Lab_Inputs.txt", "w") as s:
         s.write("\n")
 
         s.write("\nMYL2: \n")
-        s.write("\n".join(myl2_chai_motifs))        
+        s.write("\n".join(myl2_chai_motifs))              

@@ -2,11 +2,11 @@ load /Users/siennad0304/Documents/Senior Year/Comp Biology /MYBC3.pdb
 as cartoon
 select i. 603-606
 set_name sele, motif
-color pink, motif
+color purple, motif
 fetch 6uz0
 select i. 1606-1619
 set_name sele, navmotif
-color teal, navmotif
+color green, navmotif
 hide everything
 enable navmotif
 show cartoon, navmotif
