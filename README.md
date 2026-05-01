@@ -31,7 +31,7 @@ conda deactivate
 ```
 When the virtual environment is active, the terminal prompt should show: 
 ```
-(.motif_pipeline) user/path_to_project_directory
+(motif_pipeline) user/path_to_project_directory
 ```
 To run the snakemake file, run the command:
 ```
@@ -102,7 +102,11 @@ Example ABLIM1 Pathway and Location
 Example MYBPC3 Pathway and Location 
 <img width="986" height="344" alt="Screenshot 2026-04-30 at 8 51 39 PM" src="https://github.com/user-attachments/assets/922ec760-856c-432e-8191-9839f4096f2e" />
 
-Once each of these changes have been made, run pymol_file_generator.py. You will get one .pml script for each identified muscle protein motif within simiple_unique_hits.tsv. Each file will be labeled with the muscle protein assocaited with the motif used to create the script. 
+Once each of these changes have been made, run pymol_file_generator.py:
+```
+python scripts/pymol_file_generator.py
+```
+You will get one .pml script located in results/structure/ for each identified muscle protein motif within simiple_unique_hits.tsv. Each file will be labeled with the muscle protein associated with the motif used to create the script. 
 
 # Running .pml Scripts in PyMOL
 To run the produced .pml scripts, download each script to your local machine and open the pyMOL application. Double click your chosen .pml script, this will open and run the script in pyMOL allowing you to view and interact with the chosen motif alignment.
