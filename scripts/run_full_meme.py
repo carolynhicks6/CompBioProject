@@ -152,4 +152,4 @@ df = df.rename(columns={"Match_Sequence": "Match"})
 df = df[["Protein", "Motif", "Match", "P_value"]]   # keep P_value
 df.to_csv(output_file, sep="\t", index=False)
 
-print(f"MEME hits: {len(df)}")q
+print(f"MEME hits: {len(df)}")
