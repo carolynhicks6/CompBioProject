@@ -1,22 +1,24 @@
-import pandas as pd
-import numpy as np
-import sys
-import os
+import pandas as pd #dataframe
+import numpy as np #scoring
+import sys #command line
+import os #files/paths
 
+#input files
 blast_file = sys.argv[1]
-
 meme_file = sys.argv[2]
 outdir = sys.argv[3]
 
 os.makedirs(outdir, exist_ok=True)
 
+#load data
 blast = pd.read_csv(blast_file, sep="\t")
 meme = pd.read_csv(meme_file, sep="\t")
 
+#make sure Nav1.5 isn't there
 blast = blast[blast["Protein"] != "Nav1.5"]
 meme = meme[meme["Protein"] != "Nav1.5"]
 
-#build blast + MSA rows
+#build blast rows
 blast_rows = []
 for _, row in blast.iterrows():
     blast_rows.append({
@@ -44,15 +46,17 @@ for _, row in meme.iterrows():
         "Match": str(row["Match"])
     })
 
+#combine both methods
 combined = pd.DataFrame(blast_rows + meme_rows)
 
 #remove sequences shorter than 4 AAS
 combined = combined[combined["Match"].str.len() >= 4]
 
+#print output for check
 print("Total rows:", len(combined))
 print(combined["Method"].value_counts())
 
-#unique output
+#unique matches per protein
 simple = (
     combined.groupby("Protein")["Match"]
     .apply(lambda x: list(set(x.dropna())))
@@ -65,6 +69,7 @@ def score_sequence(group):
     composite = 0.0
     components = []
 
+    #meme scoring
     meme_rows = group[group["Method"] == "MEME"]
     if len(meme_rows) > 0:
         pval = meme_rows.iloc[0]["MEME_Pvalue"]
@@ -73,6 +78,7 @@ def score_sequence(group):
             composite += s
             components.append(f"MEME:{s:.2f}")
 
+    #BLAST scoring
     msa_rows = group[group["Method"] == "BLAST+MSA"]
     if len(msa_rows) > 0:
         msa_score = msa_rows.iloc[0]["MSA_Score"]
@@ -103,5 +109,5 @@ scores = (
 
 # keep top 5 per protein
 scores = scores.groupby("Protein").head(5)
-
+#save output
 scores.to_csv(f"{outdir}/ranked_results.tsv", sep="\t", index=False)
