@@ -31,7 +31,7 @@ conda deactivate
 ```
 When the virtual environment is active, the terminal prompt should show: 
 ```
-(.motif_pipeline) user/path_to_project_directory
+(motif_pipeline) user/path_to_project_directory
 ```
 To run the snakemake file, run the command:
 ```
