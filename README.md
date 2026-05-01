@@ -63,9 +63,10 @@ When running the following code chunk:
 ```
 An error message may pop up that requires the user to restart the runtime session. Follow this error message and run the code chunk again. It should finish running quickly without error the second time. 
 
-In the Chai script, there is a fasta-format section where the sequences for the LqhIII toxin and the candidate protein motifs can be inserted. To run the script, use the following input data: 
+In the Chai script, there is a fasta-format section (in the block of code that starts with "import logging" where the sequences for the LqhIII toxin and the candidate protein motifs can be inserted. To run the script, use the following input data:
 
 LqhIII toxin: VRDGYIAQPENCVYHCFPGSSGCDTLCKEKGGTSGHCGFKVGHGLACWCNALPDNVGIIVEGEKCHS
+
 ABLIM1 motif: CKGEVLRVQTKHFHIKCFTCKVCGCDLAQGGFFIKNGEYLCTLDYQRMYGTRC
 
 The motif can be substituted for other proteins and other motifs. Each line in the file results/structure/Chai_Lab_Inputs.txt represents a unique muscle protein motif that can be plugged into the "peptide" section.
