@@ -109,3 +109,7 @@ To run the produced .pml scripts, download each script to your local machine and
 Example ABLIM1 .pml Output Image (ABLIM1 Motif:Pink, Sodium Channel:Teal)
 <img width="1280" height="960" alt="ABLIM1_output " src="https://github.com/user-attachments/assets/dfb8d84d-03ec-4ec1-90b2-11c476333bcd" />
 
+# Alternative to Running pyMOL and Chai-Lab
+If you are unable, or do not want to run the strutural portion of this code but still want to view the results use the link below containing all ran structural outputs for both Chai-Lab and pyMOL
+
+https://loyolauniversitychicago-my.sharepoint.com/:x:/g/personal/sdyavanapalli_luc_edu/IQBluW1F8uj2TIipoqtKetefAWA9PyUlKkXt5Mpg3fyEkyA?e=q9Cflc 
