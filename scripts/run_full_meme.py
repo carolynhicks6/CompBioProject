@@ -21,7 +21,8 @@ sequences = {
 
 msa_df = pd.read_csv(msa_file, sep="\t")
 
-#create strict motifs
+#create strict meme input file (.meme) - requires version, alphabet, motif name, and letter probability matrix
+#letter probability matrix will have 1s for matches and 0s for mismatches
 
 def write_strict(motifs, out):
     alphabet = "ACDEFGHIKLMNPQRSTVWY"
@@ -33,16 +34,18 @@ def write_strict(motifs, out):
             f.write(f"MOTIF {motif} motif_{i+1}\n")
             f.write(f"letter-probability matrix: alength=20 w={len(motif)} nsites=1\n")
 
+            #columns are positions in alphabet, rows are amino acids in motif
             for aa in motif:
                 row = ["1.0" if aa == x else "0.0" for x in alphabet]
                 f.write(" ".join(row) + "\n")
 
 write_strict(motifs, "results/meme/strict.meme")
 
-#build flexible
+#next create flexible input file
+#letter probability matrix will factor in substitutions from multiple sequence alignment
 
 def build_flexible(msa_df):
-    """Position-aware flexible dict matching old make_filtered_dict logic."""
+    #position aware flexible dict
     motif_dict = {}
 
     for _, row in msa_df.iterrows():
@@ -50,7 +53,7 @@ def build_flexible(msa_df):
         aligned_motif = row["Aligned_Motif"]
         aligned_hit = row["Aligned_Hit"]
 
-        if len(aligned_motif) < 4:
+        if len(aligned_motif) < 4: #filter by seq length
             continue
 
         motif_dict.setdefault(motif, {})[aligned_motif] = aligned_hit
@@ -62,12 +65,12 @@ def make_prob_matrix(motif, filtered_dict):
     alphabet = "ACDEFGHIKLMNPQRSTVWY"
     count_matrix = pd.DataFrame(0, index=range(len(motif)), columns=list(alphabet))
 
-    # seed with the motif itself 5x more than substitutions
+    #seed with the motif itself: 5x more than substitutions
     for i, aa in enumerate(motif):
         if aa in count_matrix.columns:
             count_matrix.loc[i, aa] += 5
 
-    # update positions based on aligned fragments
+    #update positions based on aligned fragments
     for fragment, hit in filtered_dict.items():
         start = motif.find(fragment)
         if start != -1:
@@ -76,10 +79,10 @@ def make_prob_matrix(motif, filtered_dict):
                 if position < len(motif) and char in alphabet:
                     count_matrix.loc[position, char] += 1
 
-    row_sums = count_matrix.sum(axis=1)
-    return count_matrix.divide(row_sums, axis=0).round(6)
+    row_sums = count_matrix.sum(axis=1) 
+    return count_matrix.divide(row_sums, axis=0).round(6) #normalize
 
-
+#write information to .meme file
 def write_flexible(motif_dict, out):
     alphabet = "ACDEFGHIKLMNPQRSTVWY"
 
@@ -134,22 +137,19 @@ def run_fimo(meme_file, label):
 
     return df
 
-#run both motif sets (strict and flexible)
+#run both meme input files (strict and flexible)
 df_strict = run_fimo("results/meme/strict.meme", "strict")
 df_flex = run_fimo("results/meme/flexible.meme", "flex")
 
-#c
+#combine, filter, and clean results from running FIMO on both files
 df = pd.concat([df_strict, df_flex])
 df["Method"] = "MEME"
 
-df = df[df["P_value"] < 1e-4]
-
+df = df[df["P_value"] < 1e-4] #keep significant results
 df = df[df["Protein"] != "Nav1.5"]
 
 df = df.rename(columns={"Match_Sequence": "Match"})
 df = df[["Protein", "Motif", "Match", "P_value"]]   # keep P_value
-df.to_csv(output_file, sep="\t", index=False)
-
 df.to_csv(output_file, sep="\t", index=False)
 
 print(f"MEME hits: {len(df)}")
