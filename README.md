@@ -23,7 +23,7 @@ Once the conda environment has been established in your project directory, activ
 ```
 conda activate motif_pipeline
 ```
-If you want to deactivat the conda environment, simply use the command:
+If you want to deactivate the conda environment, simply use the command:
 ```
 conda deactivate
 ```
