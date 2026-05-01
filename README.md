@@ -63,7 +63,7 @@ When running the following code chunk:
 ```
 !pip install chai-lab
 ```
-An error message may pop up that requires the user to restart the runtime session. Follow this error message and run the code chunk again. It should finish running quickly without error the second time. 
+An error message may pop up that requires the user to restart the runtime session. Follow this error message and run the code chunk again. It should finish running quickly without error the second time. If there are continuous errors, try running the script in Google Chrome opposed to another browser.
 
 In the Chai script, there is a fasta-format section (in the block of code that starts with "import logging" where the sequences for the LqhIII toxin and the candidate protein motifs can be inserted. To run the script, use the following input data:
 
