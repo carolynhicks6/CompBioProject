@@ -11,7 +11,9 @@ ablim_list = []
 myl2_list = []
 mybpc_list = []
 
-for record in Bio.SeqIO.parse("sequences.fasta", "fasta"):
+sequence_path = "data/raw/sequences.fasta" # get path from different folder
+
+for record in Bio.SeqIO.parse(sequence_path, "fasta"):
      #sequence order: ABLIM1, MYBPC, MYL2
     sequence_list.append(str(record.seq))
 
@@ -25,8 +27,11 @@ myl2_seq = sequence_list[3]
 motif_dic = {}
 remove_list = "[],'"
 
+#pathway for motif list input 
+simple_hits_path = "results/final/simple_unique_hits.tsv"
+
 #iterating through sample unique sample hits for each line 
-with open ("simple_unique_hits.tsv") as f: 
+with open (simple_hits_path) as f: 
     for i in f:
         var = i.strip()
         x = str.maketrans("", "", remove_list) #getting rid of extra formatting from input file 
